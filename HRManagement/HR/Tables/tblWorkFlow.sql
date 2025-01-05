@@ -1,0 +1,10 @@
+﻿CREATE TABLE HR.tblWorkFlow (
+    Id INT IDENTITY NOT NULL
+    , [Order] SMALLINT NOT NULL
+    , PositionId INT NOT NULL
+    , OwnerId INT NOT NULL
+    , WorkflowStep NVARCHAR(1000) NOT NULL
+	, CONSTRAINT PK_WorkFlow PRIMARY KEY CLUSTERED(Id)
+    , CONSTRAINT FK_WorkFlow_PositionId FOREIGN KEY(PositionId) REFERENCES HR.tblPosition(Id)
+)
+

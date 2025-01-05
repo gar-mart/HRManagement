@@ -1,0 +1,17 @@
+﻿CREATE PROCEDURE HR.DeleteAgency(
+	@id INT
+)
+AS
+SET NOCOUNT ON
+
+BEGIN TRY
+
+	DELETE HR.tblAgency
+	WHERE Id = @id
+
+END TRY
+BEGIN CATCH
+	IF ERROR_NUMBER() = 547 RETURN 1;  -- Position is in use
+	THROW;
+END CATCH
+

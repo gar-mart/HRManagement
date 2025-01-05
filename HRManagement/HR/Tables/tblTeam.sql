@@ -1,0 +1,8 @@
+﻿CREATE TABLE HR.tblTeam (
+    Id INT IDENTITY NOT NULL
+    , FirstName NVARCHAR(50) NOT NULL
+    , LastName NVARCHAR(50) NOT NULL
+    , IsInterviewer BIT NOT NULL
+    , IsActive BIT NOT NULL
+    , CONSTRAINT PK_Team PRIMARY KEY CLUSTERED(Id)
+)

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>HRManagement</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{e0058f2c-99e1-4a61-a827-746b8dbda166}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>HRManagement</RootNamespace>
+    <AssemblyName>HRManagement</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Security" />
+    <Folder Include="Security\Schemas" />
+    <Folder Include="HR" />
+    <Folder Include="HR\Stored Procedures" />
+    <Folder Include="HR\Tables" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Security\Schemas\HR.sql" />
+    <Build Include="HR\Stored Procedures\AddAgency.sql" />
+    <Build Include="HR\Stored Procedures\AddCampaign.sql" />
+    <Build Include="HR\Stored Procedures\AddCandidate.sql" />
+    <Build Include="HR\Stored Procedures\AddFile.sql" />
+    <Build Include="HR\Stored Procedures\AddPosition.sql" />
+    <Build Include="HR\Stored Procedures\AddRole.sql" />
+    <Build Include="HR\Stored Procedures\AddTeam.sql" />
+    <Build Include="HR\Stored Procedures\DeleteAgency.sql" />
+    <Build Include="HR\Stored Procedures\DeleteCampaign.sql" />
+    <Build Include="HR\Stored Procedures\DeleteCandidate.sql" />
+    <Build Include="HR\Stored Procedures\DeleteFile.sql" />
+    <Build Include="HR\Stored Procedures\DeletePosition.sql" />
+    <Build Include="HR\Stored Procedures\DeleteRole.sql" />
+    <Build Include="HR\Stored Procedures\DeleteTeam.sql" />
+    <Build Include="HR\Stored Procedures\ReturnAgencyById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnAgencyList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnCampaignById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnCampaignList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnCandidateById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnCandidateList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnFileById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnFileList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnPositionById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnPositionList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnRoleById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnRoleList.sql" />
+    <Build Include="HR\Stored Procedures\ReturnTeamById.sql" />
+    <Build Include="HR\Stored Procedures\ReturnTeamList.sql" />
+    <Build Include="HR\Stored Procedures\UpdateAgency.sql" />
+    <Build Include="HR\Stored Procedures\UpdateCampaign.sql" />
+    <Build Include="HR\Stored Procedures\UpdateCandidate.sql" />
+    <Build Include="HR\Stored Procedures\UpdateFile.sql" />
+    <Build Include="HR\Stored Procedures\UpdatePosition.sql" />
+    <Build Include="HR\Stored Procedures\UpdateRole.sql" />
+    <Build Include="HR\Stored Procedures\UpdateTeam.sql" />
+    <Build Include="HR\Tables\tblAgency.sql" />
+    <Build Include="HR\Tables\tblCampaign.sql" />
+    <Build Include="HR\Tables\tblCandidate.sql" />
+    <Build Include="HR\Tables\tblCandidateInterviewer.sql" />
+    <Build Include="HR\Tables\tblCandidateWorkflow.sql" />
+    <Build Include="HR\Tables\tblFile.sql" />
+    <Build Include="HR\Tables\tblInterviewAnswer.sql" />
+    <Build Include="HR\Tables\tblInterviewQuestion.sql" />
+    <Build Include="HR\Tables\tblPosition.sql" />
+    <Build Include="HR\Tables\tblRole.sql" />
+    <Build Include="HR\Tables\tblTeam.sql" />
+    <Build Include="HR\Tables\tblWorkFlow.sql" />
+  </ItemGroup>
+</Project>
